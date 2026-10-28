@@ -1,38 +1,34 @@
 # Work Command Center · Web Demo
 
-Egyszerűsített, magyar nyelvű interaktív bemutató, kizárólag kitalált adatokkal. Az eredeti app működési elvét mutatja meg; nem tartalmazza annak adatbázisát vagy mentéseit.
+An English interactive demo using fictional data only. It demonstrates the original app’s workflow without including its database or backups.
 
-## 1 perces bemutató
+## One-minute walkthrough
 
-1. **Mai nap:** válassz legfeljebb három fókuszt a csillagokkal.
-2. Jelöld késznek a „Visszajelzések összegzése” lépést. A projekt haladása frissül.
-3. **Projektek:** nyisd meg az Ügyfélportál projektet. Látható a projekt → feladat → következő lépés felépítés.
-4. Egy feladat címére kattintva módosíts státuszt, céldátumot, várakozást vagy 10 perces lépést.
-5. **Riportok:** nézd meg és másold ki a friss összefoglalót.
-6. **Demó alaphelyzetbe:** bármikor újrakezdhető a bemutató.
+1. **Today:** star up to three daily focus items.
+2. Complete **Summarise user feedback** and watch project progress update.
+3. **Projects:** open **Customer portal refresh** to explore project → task → next action.
+4. Click a task title to edit its status, target date, follow-up or 10-minute next step.
+5. **Reports:** review and copy the updated summary.
+6. **Reset demo:** start again with fresh fictional data.
 
-## Működés és korlátok
+## Behaviour and limits
 
-- Statikus HTML/CSS/JavaScript, szerveroldali kód és külső függőség nélkül.
-- A változások a saját böngésző localStorage tárolójába kerülnek (`wcc-public-demo-v1`). A látogatók egymástól független példányokat használnak.
-- A demó induló dátumai az első megnyitás napjához képest készülnek. Az alaphelyzetbe állítás friss dátumokkal indít újra.
-- A napi fókusz új napon nullázódik. A legutolsó módosítás visszavonható, amíg újabb módosítás vagy oldalfrissítés nem történik.
-- Nyitott lépésekkel rendelkező feladat lezárásakor külön megerősítés jelenik meg; a kapcsolódó lezárás együtt vonható vissza.
-- A projekt haladása a lezárt feladatok és lépések aránya. A mérföldkövek külön követhetők.
-- A riport egy aktuális állapotkép, nem az eredeti app teljes napi/heti riportmodulja. A másolás nem küldi el senkinek.
-- Nincs import, bejelentkezés, analitika vagy adatküldés. Valós vagy bizalmas adatot ne írj bele.
+- Static HTML/CSS/JavaScript, without external dependencies or a backend.
+- Changes stay in your browser’s localStorage (`wcc-public-demo-en-v1`). Each visitor has an independent copy.
+- The English demo uses separate storage from the earlier Hungarian demo. Existing Hungarian demo data is left untouched.
+- Initial dates are relative to the first visit. Resetting generates fresh dates.
+- Daily focus resets on a new day. The latest change can be undone until another change or page refresh.
+- Completing a task with open next actions requires confirmation. The combined completion can be undone together.
+- Project progress is the percentage of completed tasks and next actions. Milestones are tracked separately.
+- Reports are current snapshots, not the original app’s full daily/weekly report module. Copying does not send anything.
+- No imports, sign-in, analytics or data submission. Do not enter real or confidential data.
 
 ## GitHub Pages
 
-A repó **Settings → Pages** menüjében:
+**Settings → Pages → Deploy from a branch → main → / (root) → Save.**
 
-- Source: **Deploy from a branch**
-- Branch: **main**
-- Folder: **/ (root)**
-- **Save**
+All asset URLs are relative, so the app works at the repository’s Pages subpath.
 
-Minden hivatkozás relatív, ezért a webapp a repó almappás Pages-címén is működik.
+## Local preview
 
-## Helyi megnyitás
-
-Nyisd meg az `index.html` fájlt egy modern böngészőben. A másoláshoz és a stabil helyi adattároláshoz ajánlott HTTP-kiszolgálót használni, például: `python3 -m http.server 8000`.
+Open `index.html` in a modern browser. For clipboard access and consistent local storage, serve the folder over HTTP, for example with `python3 -m http.server 8000`.
